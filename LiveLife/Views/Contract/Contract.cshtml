@@ -1,0 +1,49 @@
+﻿
+@model LiveLife.Context.tblContract
+
+
+@{
+    ViewBag.Title = "Contract";
+}
+
+<style>
+    .error {
+        color: red;
+    }
+    .message{
+        color: #096A0B;
+    }
+</style>
+
+
+<h2>Contract</h2>
+
+
+@using (Html.BeginForm("AddContract", "Contract", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            <p class="error">@ViewBag.ErrorMessage</p>
+            <p class="message">@ViewBag.Message</p>
+            @Html.HiddenFor(x => x.ContractID)
+            <label>Promisor</label>
+            @Html.ValidationMessageFor(x => x.Promiser, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Promiser, new { @class = "form-control" })
+            
+        </div>
+
+
+        <div class="form-group">
+            <label>Promisee</label>
+            @Html.ValidationMessageFor(x => x.Promisee, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Promisee, new { @class = "form-control" })
+        </div>
+
+        <div class="container">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Cancel</button>
+        </div>
+
+    </div>
+}
+

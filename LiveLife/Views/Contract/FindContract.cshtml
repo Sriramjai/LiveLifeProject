@@ -1,0 +1,63 @@
+﻿
+
+@model LiveLife.Controllers.ContractController.ContractModel
+
+    @{
+        ViewBag.Title = "Contract";
+    }
+
+
+    <h2>Find Contract</h2>
+
+@using (Ajax.BeginForm("GetContractDetails", "Contract", new AjaxOptions { UpdateTargetId = "divFindContractDetails" }))
+{
+    <fieldset>
+        <div id="divFindContractDetails"></div>
+
+        <div class="container">
+            @*<div class="label">
+                @Html.LabelFor(model => model.promisor)
+            </div>
+            <div class="input-lg">
+                @Html.EditorFor(model => model.promisor)
+            </div>
+
+            <div class="label">
+                @Html.LabelFor(model => model.promisee)
+            </div>
+            <div class="input-lg">
+                @Html.EditorFor(model => model.promisee)
+            </div>
+
+            <p>
+                <input type="submit" value="Find" />
+            </p>*@
+
+            <div class="container">
+                <div class="form-group">
+                    <label>Promisor Name</label>
+                    @Html.ValidationMessageFor(model => model.promisor, "", new { @class = "error" })
+                    @Html.TextBoxFor(model => model.promisor, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Promisee Name</label>
+                    @Html.ValidationMessageFor(model => model.promisee, "", new { @class = "error" })
+                    @Html.TextBoxFor(model => model.promisee, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Find</button>
+                    <button type="reset" class="btn btn-danger">Cancel</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </fieldset>
+}
+
+
+
+

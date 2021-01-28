@@ -1,0 +1,64 @@
+﻿
+@model LiveLife.Context.tblAdvisor
+
+@{
+    ViewBag.Title = "Advisor";
+}
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+
+<h2>Advisor</h2>
+
+@using (Html.BeginForm("AddAdvisor", "Advisor", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            @Html.HiddenFor(x => x.AdvisorID)
+            <label>First Name</label>
+            @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "error" })
+            @Html.TextBoxFor(x=>x.FirstName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Last Name</label>
+            @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            @Html.ValidationMessageFor(x => x.Address, "", new { @class = "error" })
+            @Html.TextAreaFor(x => x.Address, new { @class = "form-control",@rows="10"})
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Health Status</label>
+            @Html.ValidationMessageFor(x => x.HealthStatus, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.HealthStatus, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Cancel</button>
+        </div>
+
+    </div>
+    
+
+}
+
+
+
+
+

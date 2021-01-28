@@ -1,0 +1,36 @@
+﻿
+@model List<LiveLife.Context.tblAdvisor>
+
+@{
+    ViewBag.Title = "AdvisorList";
+}
+
+<h2>AdvisorList</h2>
+
+<table class="table table-hover table-condensed">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Health Status</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Address</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.HealthStatus</td>
+            <td>
+                <a href="@Url.Action("Advisor", new { item.AdvisorID, item.FirstName, item.LastName, item.Address, item.PhoneNumber, item.HealthStatus})" class="btn btn-success"><i class="glyphicon glyphicon-pencil"></i></a>
+                <a href="@Url.Action("Delete", new { item.AdvisorID })" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+
+

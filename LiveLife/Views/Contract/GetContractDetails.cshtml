@@ -1,0 +1,46 @@
+﻿@using LiveLife.Models
+    
+@{
+    ViewBag.Title = "Contract Details";
+}
+
+<style>
+     .error {
+        color: red;
+        padding: 20px 20px;
+    }
+
+</style>
+
+<h2>Contract Details</h2>
+
+@{
+        var data = ViewBag.Message;
+        
+        if (ViewBag.Message != null)
+        {
+            data = ViewBag.Message;
+        
+        <h3>Contract ID : @data.ContractID</h3>
+        <h3>Promisor : @data.Promiser</h3>
+        <h3>Promisee : @data.Promisee</h3>
+        }
+        else
+        {
+            data = null;
+
+        <h4 class="error">Contract does not exist or Data does not exist</h4>
+}
+
+
+
+}
+
+
+@*<h3>Contract ID : @data.ContractID</h3>
+<h3>Promisor : @data.Promiser</h3>
+<h3>Promisee : @data.Promisee</h3>*@
+
+
+
+

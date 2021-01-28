@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LiveLifeModelStoreContainer" CdmEntityContainer="LiveLifeEntities">
+    <EntitySetMapping Name="CarrierMGAs">
+      <EntityTypeMapping TypeName="LiveLifeModel.CarrierMGA">
+        <MappingFragment StoreEntitySet="CarrierMGA">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAdvisors">
+      <EntityTypeMapping TypeName="LiveLifeModel.tblAdvisor">
+        <MappingFragment StoreEntitySet="tblAdvisor">
+          <ScalarProperty Name="HealthStatus" ColumnName="HealthStatus" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="AdvisorID" ColumnName="AdvisorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblContracts">
+      <EntityTypeMapping TypeName="LiveLifeModel.tblContract">
+        <MappingFragment StoreEntitySet="tblContract">
+          <ScalarProperty Name="Promisee" ColumnName="Promisee" />
+          <ScalarProperty Name="Promiser" ColumnName="Promiser" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

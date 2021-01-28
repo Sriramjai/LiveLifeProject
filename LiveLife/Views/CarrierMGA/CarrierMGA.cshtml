@@ -1,0 +1,52 @@
+﻿
+@model LiveLife.Context.CarrierMGA
+
+@{
+    ViewBag.Title = "CarrierMGA";
+}
+
+<style>
+    .error {
+        color: red;
+    }
+
+</style>
+
+
+<h2>Carrier MGA</h2>
+
+@using (Html.BeginForm("AddCarrierMGA", "CarrierMGA", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            @Html.HiddenFor(x => x.Id)
+            <label>Business Name</label>
+            @Html.ValidationMessageFor(x=> x.BusinessName, "", new { @class = "error"} )
+            @Html.TextBoxFor(x => x.BusinessName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Business Address</label>
+            @Html.ValidationMessageFor(x => x.BusinessAddress, "", new { @class = "error" })
+            @Html.TextAreaFor(x => x.BusinessAddress, new { @class = "form-control",@rows="10" })
+        </div>
+
+        <div class="form-group">
+            <label>Business Phone</label>
+            @Html.ValidationMessageFor(x => x.BusinessPhoneNumber, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.BusinessPhoneNumber, new { @class = "form-control" })
+        </div>
+
+        <div class="container"> 
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Cancel</button>
+        </div>
+
+    </div>
+
+}
+
+
+
+
+
